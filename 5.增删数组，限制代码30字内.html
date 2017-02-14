@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		有一个长度未知的数组a，如果它的长度为0就把数字1添加到数组里面，
+		否则按照先进先出的队列规则让第一个元素出队。
+		<script type="text/javascript">
+		/*
+//			var arr=[];
+			var arr=[1,2,3];
+			if(arr.length!=0){
+				arr.shift();
+				console.log(arr);
+			}else{
+				arr.push(1);
+				console.log(arr);
+			}
+		*/
+		//改进：要求字数小于30，并且只做操作，不用输出
+		//var a=[];
+		var a=[1,2,3];
+		//a.length!=0?a.shift():a.push(1);  //与下面等价
+		a.length==0?a.push(1):a.shift();
+		console.log(a);
+		</script>
+	</body>
+</html>

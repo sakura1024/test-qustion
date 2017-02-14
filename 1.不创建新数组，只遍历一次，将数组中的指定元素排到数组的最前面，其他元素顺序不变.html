@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        //不创建新数组，只遍历一次，将数组中的指定元素排到数组的最前面，其他元素顺序不变
+         // 例如:指定元素为4(注意有两个4的情况)
+            var a=[100,9,4,5,4,32,43,34];
+            var len=a.length;
+            for (var i=0;i<a.length;i++) {
+                if(a[i]==4){
+                    a.splice(i,1);
+                    a.unshift(4);
+                }
+            }
+            console.log(a);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//要求:不使用for循环，创建一个长度为100的数组，并且每个元素的值等于它的下标
+		
+		//原理：
+		//先是创建一个数组，然后，通过join方法把它转成字符串，
+		//，再通过split方法把字符串转成数组，这时候，它就拥有100个值为空的元素了，
+		//然后，再通过map函数，改变这些元素的值即可。
+			var arr=new Array(100);
+			console.log(arr);
+			arr=arr.join(',');
+			console.log(arr);
+			arr=arr.split(',');
+			console.log(arr);
+			arr=arr.map(function(item,index){
+				return index;   //返回的每个数组元素都为index值，并且生成了新的数组
+			});
+			console.log(arr);
+			//总结：join、split、map函数均不改变原有数组
+			
+			
+			
+//var a = Array(100).join(",").split(",").map(function(item, index) {
+//　　return index;
+//});
+//console.log(a)
+			
+		</script>
+	</body>
+</html>

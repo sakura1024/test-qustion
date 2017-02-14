@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul">
+			
+		</ul>
+		<script type="text/javascript">
+			//.请把<ul><li>第1行</li><li>第2行</li>...</ul>（ul之间有10个li元素）插入body里面，
+			//注意：需要考虑到性能问题。
+			//不考虑性能：两种方法都操作10次dom--好性能
+			//法1:
+			/*
+			var oUl=document.querySelector('#ul');
+			var newItem='';
+			for (var i=0;i<10;i++) {
+				newItem=document.createElement('li');
+				newItem.innerText='第'+(10-i)+'行';
+				oUl.insertBefore(newItem,oUl.childNodes[0]);
+			}
+			*/
+			//法2
+			/*
+			var oUl=document.querySelector('#ul');
+			var newItem='';
+			for (var i=0;i<10;i++) {
+				newItem=document.createElement('li');
+				newItem.innerText='第'+(i+1)+'行';
+				oUl.appendChild(newItem);
+			}
+			*/
+			//考虑性能：减少Dom操作，只操作一次dom  line 41
+			var oUl=document.querySelector('#ul');
+			var lis='';
+			for (var i=0;i<10;i++) {
+				lis+='<li>第'+(i+1)+'行</li>';
+			}
+			oUl.innerHTML=lis;  //注意字符串拼接时，需要使用innerHTML
+		</script>
+	</body>
+</html>

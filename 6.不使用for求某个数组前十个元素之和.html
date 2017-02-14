@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+		//法1
+		/*
+			var arr = [1, 2, 3, 4, 5, 6, 7,8,9,10,11];
+			var filterResult = arr.filter(function(item, index, array) {
+				
+				return (index<=9);
+			});
+			var reduceResult=filterResult.reduce(function(prev,cur,index,array){
+			return prev+cur;//36
+			})
+			console.log(reduceResult);
+		*/
+		//法2
+		var arr = [1, 2, 3, 4, 5, 6, 7,8,9,10,11];
+		var sum=arr.slice(0,10).reduce(function(prev,cur){
+			return prev+cur;
+		})
+		console.log(sum);
+		</script>
+	</body>
+
+</html>
