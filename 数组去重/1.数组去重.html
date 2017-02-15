@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://blog.jobbole.com/33099/">从 JavaScript 数组去重谈性能优化</a>
+		<!--数组去重要求：不可生成新数组-->
+		<script type="text/javascript">
+			//法1
+			/*var arr=[1,2,3,3,1,8,7,2,9,4,5,1,6]
+			for (var i = 0; i < arr.length-1; i++) {
+				for (var j=i+1; j <= arr.length-1; j++) {
+					if(arr[i]===arr[j]){
+						for (var w = j; w < arr.length; w++) {
+							arr[w]=arr[w+1];
+						}
+						arr.length=arr.length-1;
+					}
+				}
+			}*/
+			
+			
+			//删除重复数组的改进方法:arr.splice(j,1);
+			//法2
+			//数组去重注意:1!='1'
+			var arr=[1,2,3,3,1,8,7,2,9,4,5,1,6,'1']
+			for (var i = 0; i < arr.length-1; i++) {
+				for (var j=i+1; j <= arr.length-1; j++) {
+					if(arr[i]===arr[j]){
+						arr.splice(j,1);
+					}
+				}
+			}
+			console.log(arr);
+			
+//			1,2,3,3,1,8,7,2,9,4,5,1,6,'1'   数组长度为：14
+//			1,2,3,3,  8,7,2,9,4,5,1,6,'1'   数组长度为：13(删掉1)
+//			1,2,3,3,  8,7,2,9,4,5,  6,'1'   数组长度为：12(删掉1)
+//			1,2,3,3,  8,7,  9,4,5,  6,'1'   数组长度为：11(删掉2)
+//			1,2,3,    8,7,  9,4,5,  6,'1'   数组长度为：10(删掉3)
+			
+			
+			
+		</script>
+	</body>
+</html>
